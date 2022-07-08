@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>現実</title>
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <div class="タイトル">
+        <h1 style="text-align:center">(っ・ω・）っ現実</h1>
+        <style media="screen">
+          h1{
+    position: relative;
+    padding: 1rem 2rem calc(1rem + 10px);
+    background: #fff100;
+    }
+    h1:before{
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    width: 100%;
+    height: 100%;
+    content: '';
+    border: 4px solid #000;
+    }
+        </style>
+    
+      </div>
+      <nav>
+        <ul>
+          <li><a href="testbot.html">ホーム</a></li>
+          <li><a href="テストボット.html">テストボット</a></li>
+          <li><a href="便利ツール.html">便利ツール</a></li>
+        </ul>
+        <style media="screen">
+          nav {
+    width: 100%;
+    height: 70px;
+    background-color: dimgray;
+    padding-top: 5px;
+    box-sizing: border-box;
+    }
+    ul {
+    display: flex;
+    }
+    li {
+    list-style: none;
+    }
+    a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin-right: 35px;
+    }
+        </style>
+      </nav>
+      <div>
+        <section class="timer">
+            <h2>テスト終了まで残り</h2>
+            <div id="CDT"></div>
+            </section>
+      </div>
+      <style>
+        #CDT {
+width: 100%;
+text-align: center;
+font-size: 150px;
+font-weight: bold;
+color: #ffffff;
+font-family: 'Noto Sans JP', sans-serif;}
+#CDT01 {
+width: 100%;
+text-align: center;
+font-size: 100%;
+font-weight: bold;
+color: #ffffff;
+font-family: 'Noto Sans JP', sans-serif;
+}
+
+.ttl {
+color: #ffffff;
+font-size: 100px;
+font-weight: 1000;
+text-align: center;
+margin: 0;
+line-height: 1.5;
+}
+
+.timer {
+background: #4f9cbb;
+margin: 100px auto;
+padding: 100px;
+text-align:center;
+}
+      </style>
+      <script>
+        function CountdownTimer(elm, tl, mes) {
+this.initialize.apply(this, arguments);
+}
+CountdownTimer.prototype = {
+initialize: function (elm, tl, mes) {
+this.elem = document.getElementById(elm);
+this.tl = tl;
+this.mes = mes;
+}, countDown: function () {
+var timer = '';
+var today = new Date();
+var day = Math.floor((this.tl - today) / (24 * 60 * 60 * 1000));
+var hour = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+var min = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / (60 * 1000)) % 60;
+var sec = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / 1000) % 60 % 60;
+var milli = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / 10) % 100;
+var me = this;
+
+if ((this.tl - today) > 0) {
+if (day)
+timer += '' + day + '日';
+if (hour)
+timer += '' + hour + '時間';
+timer += '' + this.addZero(min) + '分' +
+    this.addZero(sec) + '秒';
+this.elem.innerHTML = timer;
+tid = setTimeout(function () {
+me.countDown();
+}, 10);
+} else {
+this.elem.innerHTML = this.mes;
+return;
+}
+}, addZero: function (num) {
+return ('0' + num).slice(-2);
+}
+}
+function CDT() {
+var tl = new Date('2022/7/11 10:40:00');// ここで日付を指定
+var timer = new CountdownTimer('CDT', tl, 'テスト終了！！　お疲れさまでした');
+timer.countDown();
+}
+
+
+
+window.onload = function () {
+CDT();
+CDT01();
+}
+
+      </script>
+    
+</body>
+</html>

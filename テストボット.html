@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テストボット</title>
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <div class="タイトル">
+        <h1 style="text-align:center">(っ・ω・）っテストボット</h1>
+        <style media="screen">
+          h1{
+    position: relative;
+    padding: 1rem 2rem calc(1rem + 10px);
+    background: #fff100;
+    }
+    h1:before{
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    width: 100%;
+    height: 100%;
+    content: '';
+    border: 4px solid #000;
+    }
+        </style>
+    
+      </div>
+      <nav>
+        <ul>
+          <li><a href="testbot.html">ホーム</a></li>
+          <li><a href="テストボット.html">テストボット</a></li>
+          <li><a href="便利ツール.html">便利ツール</a></li>
+        </ul>
+        <style media="screen">
+          nav {
+    width: 100%;
+    height: 70px;
+    background-color: dimgray;
+    padding-top: 5px;
+    box-sizing: border-box;
+    }
+    ul {
+    display: flex;
+    }
+    li {
+    list-style: none;
+    }
+    a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin-right: 35px;
+    }
+        </style>
+      </nav>
+<div>
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="検索したい言葉を入力してください。">
+<ul id="myUL">
+  <li><a href="https://drive.google.com/file/d/1uFXUMwirmAyoXR0eIwqdG76L-pUUmMUB/view?usp=drivesdk">数一授業ノート</a></li>
+  <li><a href="https://drive.google.com/file/d/1_4WTJhQt4ofoda4m1-E13y2F0iEBJnhp/view?usp=sharing">数A授業ノート</a></li>
+  <li><a href="https://drive.google.com/file/d/1bupG9Ks7QE7nc98hY4YG_9ytOhPgs8YY/view?usp=sharing">英コミュノート</a></li>
+  <li><a href="https://drive.google.com/file/d/1o6BxRnx8VCgUgvp4gY6k2BDgKz5qaM_L/view?usp=sharing">化学基礎</a></li>
+  <li><a href="https://drive.google.com/file/d/1jFDDZeihq8EB9cqn0nZtvxdg8Zm98-13/view?usp=sharing">化学基礎白紙</a></li>
+  <li><a href="https://drive.google.com/file/d/1l6VjNJVwiVTSEl77gmfNneBPpDhAy0A4/view?usp=sharing">地理総合</a></li>
+  <li><a href="https://drive.google.com/file/d/1pmmpDBZg6pJZDeqS_C5oC6R6nJlm2CCR/view?usp=sharing">家庭科</a></li>
+  <li><a href="https://drive.google.com/file/d/1n2pX0AwbArVFW_v3UbtDc2N0VsjPwc3x/view?usp=sharing">歴史総合</a></li>
+  <li><a href="https://drive.google.com/file/d/1tTQ4Cuq9bYYof0K6nVoTZJSjRv4jW6Xc/view?usp=sharing">漢文</a></li>
+  <li><a href="https://drive.google.com/file/d/1tYGWbabzuZuMOHcJG0Dx5osvNTPAiggl/view?usp=sharing">漢文中間テスト問題</a></li>
+</ul>
+<style>
+  
+  #myInput {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 1% 2%; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 90%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 1% 1% 1% 1%; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myUL {
+  display: block;
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+ul#myUL li {
+    padding: 0;
+}
+#myUL li a {
+  border: 1px solid #ddd; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6; /* Grey background color */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  font-size: 18px; /* Increase the font-size */
+  color: black; /* Add a black text color */
+  display: block; /* Make it into a block element to fill the whole list */
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #c8e4ff; /* Add a hover effect to all links, except for headers */
+}
+
+</style>
+<script>
+  function myFunction() {
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+    </div>
+
+
+
+  </body>
+</html>
